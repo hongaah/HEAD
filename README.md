@@ -22,6 +22,7 @@
   - [Apple Safari](#apple-safari)
   - [Google Android](#google-android)
   - [Google Chrome](#google-chrome)
+  - [Google Chrome Mobile (只针对 Android)](#google-chrome-mobile只针对-android)
   - [Microsoft Internet Explorer](#microsoft-internet-explorer)
   - [Microsoft Internet Explorer: 传统，不要使用！](#microsoft-internet-explorer-传统不要使用)
 - [国内的浏览器](#国内的浏览器)
@@ -77,6 +78,7 @@
 ## Meta 标签
 
 ``` html
+<!-- 设置文档的字符编码 -->
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -107,7 +109,7 @@
 <!-- 验证 Google 搜索控制台的所有权 -->
 <meta name="google-site-verification" content="verification_token">
 
-<!-- 用来命名软件或用于构建网页（如 - Wordpress、Dreamweaver）-->
+<!-- 用来命名软件或用于构建网页（如 - WordPress、Dreamweaver）-->
 <meta name="generator" content="program">
 
 <!-- 关于你的网站主题的简短描述 -->
@@ -413,13 +415,16 @@
 <!-- 触摸图标 -->
 <link rel="apple-touch-icon" href="path/to/apple-touch-icon.png">
 <link rel="apple-touch-icon-precomposed" href="path/to/apple-touch-icon-precomposed.png">
+<!-- iOS 8+ 不再支持预组合，你应该只使用 apple-touch-icon。-->
 <!-- 在大多数情况下，在 `<head>` 中，一个 180×180px 触摸图标就已经足够了 -->
-<!-- 如果你使用的艺术向或希望为每个设备提供不同的内容，你可以添加多点触控图标 -->
+<!-- 如果你想采用自适应的图标，可以设置多个尺寸的图标 -->
+<link rel="apple-touch-icon" sizes="57x57" href="/path/to/icon@57.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/path/to/icon@72.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/path/to/icon@114.png">
+<link rel="apple-touch-icon" sizes="144x144" href="//path/to/icon@144.png">
 
-<!-- 启动画面 -->
+<!-- 启动画面（已无效） -->
 <link rel="apple-touch-startup-image" href="path/to/startup.png">
-
-<!-- 更多：https://developer.apple.com/safari/library/documentation/appleapplications/reference/safarihtmlref/articles/metatags.html -->
 ```
 
 - [Apple Meta 标签](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
@@ -450,6 +455,28 @@
 <meta name="google" value="notranslate">
 ```
 
+### Google Chrome Mobile (只针对 Android)
+
+从 Chrome 31 开始，你可以设置你的 Web 应用为“app mode”，如 Safari。
+
+``` html
+<!-- 链接到一个 manifest 并定义 manifest 的元数据。-->
+<!-- manifest.json 中的例子也可以通过以下链接找到。-->
+<link rel="manifest" href="manifest.json">
+
+<!-- 定义你的网页为 Web 应用 -->
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- 第一个是官方推荐格式。-->
+<link rel="icon" sizes="192x192" href="nice-highres.png">
+<link rel="icon" sizes="128x128" href="niceicon.png">
+<!-- 所有带 apple 前缀的格式已废弃，所以不要使用它们。-->
+<link rel="apple-touch-icon" sizes="128x128" href="niceicon.png">
+<link rel="apple-touch-icon-precomposed" sizes="128x128" href="niceicon.png">
+```
+
+- [Google 开发者](https://developer.chrome.com/multidevice/android/installtohomescreen)
+
 ### Microsoft Internet Explorer
 
 ``` html
@@ -477,7 +504,7 @@
 <meta name="msapplication-square70x70logo" content="path/to/tinylogo.png">
 <meta name="msapplication-wide310x150logo" content="path/to/widelogo.png">
 <meta name="msapplication-task" content="name=Check Order Status;action-uri=./orderStatus.aspx?src=IE9;icon-uri=./favicon.ico">
-<meta name="msapplication-task-seperator" content="1">
+<meta name="msapplication-task-separator" content="1">
 <meta name="msapplication-TileColor" content="#FF3300">
 <meta name="msapplication-TileImage" content="path/to/tileimage.jpg">
 <meta name="msapplication-window" content="width=1024;height=768">
