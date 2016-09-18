@@ -425,6 +425,10 @@
 
 <!-- 启动画面（已无效） -->
 <link rel="apple-touch-startup-image" href="path/to/startup.png">
+
+<!-- iOS 应用深层链接 -->
+<meta name="apple-itunes-app" content="app-id=APP-ID, app-argument=http/url-sample.com">
+<link rel="alternate" href="ios-app://APP-ID/http/url-sample.com">
 ```
 
 - [Apple Meta 标签](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
