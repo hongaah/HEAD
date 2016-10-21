@@ -127,7 +127,7 @@
 <meta name="rating" content="General">
 
 <!-- 允许控制 referrer 信息如何传递 -->
-<meta name="referrer" content="never">
+<meta name="referrer" content="no-referrer">
 
 <!-- 禁用自动检测和格式化可能的电话号码 -->
 <meta name="format-detection" content="telephone=no">
