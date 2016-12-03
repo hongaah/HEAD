@@ -383,6 +383,14 @@
 <meta itemprop="image" content="https://example.com/image.jpg">
 ```
 
+### Pinterest
+
+根据他们的[帮助中心](https://help.pinterest.com/en/articles/prevent-people-saving-things-pinterest-your-site)可知，Pinterest 允许你禁止他人保存你网站里的内容。`description` 为可选。
+
+``` html
+<meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!">
+```
+
 ### OEmbed
 
 ``` html
