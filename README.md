@@ -372,7 +372,7 @@
 ```
 
 - [Twitter 名片：入门指南](https://dev.twitter.com/cards/getting-started)
-- [Twitter 名片验证](https://dev.twitter.com/docs/cards/validation/validator)
+- [Twitter 名片验证](https://cards-dev.twitter.com/validator)
 
 ### Google+ / Schema.org
 
@@ -629,10 +629,12 @@
 
 ## 翻译
 
-- [英语](https://github.com/joshbuchea/HEAD)
-- [巴西葡萄牙语](https://github.com/Webschool-io/HEAD)
-- [日语](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
-- [俄罗斯语](https://github.com/Konfuze/HEAD)
+- [英语/English](https://github.com/joshbuchea/HEAD)
+- [巴西葡萄牙语/Brazilian Portuguese](https://github.com/Webschool-io/HEAD)
+- [意大利语/Italian](https://github.com/Fakkio/HEAD)
+- [日语/Japanese](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
+- [俄罗斯语/Russian/Русский](https://github.com/Konfuze/HEAD)
+- [土耳其语/Turkish/Türkçe](https://github.com/mkg0/HEAD)
 
 ## 贡献
 
