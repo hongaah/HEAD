@@ -565,6 +565,6 @@
 
 ## 协议
 
-[CC0 协议](LICENSE)
-
 ![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")
+
+在法律范围内，Josh Buchea 已经放弃了这项工作的所有版权以及相关或邻近的权利。
