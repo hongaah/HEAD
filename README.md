@@ -7,14 +7,12 @@
 - [最小推荐](#最小推荐)
 - [网页元素](#网页元素)
 - [Meta 标签](#meta-标签)
-  - [不推荐的 Meta 标签](#不推荐的-meta-标签)
 - [链接](#链接)
-  - [不推荐的链接](#不推荐的链接)
   - [网站图标](#网站图标)
 - [社交](#社交)
-  - [Facebook / Open Graph](#facebook--open-graph)
-  - [Facebook / Instant Articles](#facebook--instant-articles)
-  - [Twitter](#twitter)
+  - [Facebook Open Graph](#facebook-open-graph)
+  - [Facebook Instant Articles](#facebook-instant-articles)
+  - [Twitter Cards](#twitter-cards)
   - [Google+ / Schema.org](#google--schemaorg)
   - [OEmbed](#oembed)
 - [浏览器 / 平台](#浏览器--平台)
@@ -24,7 +22,6 @@
   - [Google Chrome](#google-chrome)
   - [Google Chrome Mobile (只针对 Android)](#google-chrome-mobile只针对-android)
   - [Microsoft Internet Explorer](#microsoft-internet-explorer)
-  - [Microsoft Internet Explorer: 传统，不要使用！](#microsoft-internet-explorer-传统不要使用)
 - [国内的浏览器](#国内的浏览器)
   - [360 浏览器](#360-浏览器)
   - [QQ 移动浏览器](#qq-移动浏览器)
@@ -37,6 +34,7 @@
 - [其他格式](#其他格式)
 - [翻译](#翻译)
 - [贡献](#贡献)
+- [贡献者](#贡献者)
 - [作者](#作者)
 - [翻译者](#翻译者)
 - [许可](#许可)
@@ -48,7 +46,7 @@
 ```html
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* -->
 <title>页面标题</title>
 ```
@@ -97,7 +95,7 @@
 <meta name="description" content="一个页面描述">
 
 <!-- 控制搜索引擎的抓取和索引行为 -->
-<meta name="robots" content="index,follow,noodp"><!-- 所有的搜索引擎 -->
+<meta name="robots" content="index,follow"><!-- 所有搜索引擎 -->
 <meta name="googlebot" content="index,follow"><!-- 仅对 Google 有效 -->
 
 <!-- 告诉 Google 不显示网站链接的搜索框 -->
@@ -109,19 +107,26 @@
 <!-- 验证 Google 搜索控制台的所有权 -->
 <meta name="google-site-verification" content="verification_token">
 
+<!-- 验证 Yandex 网站管理员的所有权 -->
+<meta name="yandex-verification" content="verification_token">
+
+<!-- 验证 Bing 网站管理员中心的所有权 -->
+<meta name="msvalidate.01" content="verification_token">
+
+<!-- 验证 Alexa 控制台的所有权 -->
+<meta name="alexaVerifyID" content="verification_token">
+
+<!-- 验证 Pinterest 控制台的所有权 -->
+<meta name="p:domain_verify" content="code from pinterest">
+
+<!-- 验证 Norton 安全站点的所有权 -->
+<meta name="norton-safeweb-site-verification" content="norton code">
+
 <!-- 用来命名软件或用于构建网页（如 - WordPress、Dreamweaver）-->
 <meta name="generator" content="program">
 
 <!-- 关于你的网站主题的简短描述 -->
 <meta name="subject" content="你的网站主题">
-
-<!-- 非常简短（少于 10 个字）的描述。主要用于学术论文。-->
-<meta name="abstract" content="">
-
-<!-- 完整的域名或网址 -->
-<meta name="url" content="https://example.com/">
-
-<meta name="directory" content="submission">
 
 <!-- 基于网站内容给出一般的年龄分级 -->
 <meta name="rating" content="General">
@@ -153,67 +158,12 @@
 - [ICBM - 维基百科](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
 - [地理标记 - 维基百科](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
 
-### 不推荐的 Meta 标签
-以下是不推荐使用的 Meta 属性，因为它们采用率低，或已弃用：
-
-```html
-<!-- 用于声明文档语言，但支持得不是很好。最好使用 <html lang=""> -->
-<meta name="language" content="en">
-
-<!-- Google 无视 & Bing 认为垃圾的指示器 -->
-<meta name="keywords" content="你,关键字,在这里,不使用空格,而用逗号进行分隔">
-<!-- 目前没有在任何搜索引擎中使用过的声明 -->
-<meta name="revised" content="Sunday, July 18th, 2010, 5:15 pm">
-
-<!-- 为垃圾邮件机器人收获 email 地址提供了一种简单的方式 -->
-<meta name="reply-to" content="email@example.com">
-
-<!-- 最好使用 <link rel="author"> 或 humans.txt 文件 -->
-<meta name="author" content="name, email@example.com">
-<meta name="designer" content="">
-<meta name="owner" content="">
-
-<!-- 告诉搜索机器人一段时间后重新访问该网页。这不支持，因为大多数搜索引擎使用随机时间间隔来重新抓取网页 -->
-<meta name="revisit-after" content="7 days">
-
-<!-- 在一段时间后将用户重定向到新的 URL -->
-<!-- W3C 建议不要使用该标签。Google 建议使用服务器端的 301 重定向。-->
-<meta http-equiv="refresh" content="300; url=https://example.com/">
-
-<!-- 描述网站的主题 -->
-<meta name="topic" content="">
-
-<!-- 公司概要或网站目的 -->
-<meta name="summary" content="">
-
-<!-- 一个已废弃的标签，和关键词 meta 标签的作用相同 -->
-<meta name="classification" content="business">
-
-<!-- 是否是相同的 URL，年代久远且不支持 -->
-<meta name="identifier-URL" content="https://example.com/">
-
-<!-- 和关键词标签类似的功能 -->
-<meta name="category" content="">
-
-<!-- 确保你的网站在所有国家和语言中都能显示 -->
-<meta name="coverage" content="Worldwide">
-
-<!-- 和 coverage 标签相同 -->
-<meta name="distribution" content="Global">
-
-<!-- 控制在互联网上哪些用户可以访问 -->
-<meta http-equiv="Pics-label" content="value"> 
-
-<!-- 缓存控制 -->
-<!-- 最好在服务器端配置缓存控制 -->
-<meta http-equiv="Expires" content="0">
-<meta http-equiv="Pragma" content="no-cache">
-<meta http-equiv="Cache-Control" content="no-cache">
-```
-
 ## 链接
 
 ``` html
+<!-- 表明一个 CSS 样式表 -->
+<link rel="stylesheet" href="https://example.com/styles.css">
+
 <!-- 有助于防止出现内容重复的问题 -->
 <link rel="canonical" href="https://example.com/2010/06/9-things-to-do-before-entering-social-media.html">
 
@@ -223,9 +173,6 @@
 <!-- 链接到当前文档的一个 AMP HTML 版本 -->
 <link rel="amphtml" href="https://example.com/path/to/amp-version.html">
 
-<!-- 表明一个 CSS 样式表 -->
-<link rel="stylesheet" href="https://example.com/styles.css">
-
 <!-- 链接到一个指定 Web 应用程序“安装”证书的 JSON 文件 -->
 <link rel="manifest" href="manifest.json">
 
@@ -233,7 +180,7 @@
 <link rel="author" href="humans.txt">
 
 <!-- 指向一个适用于链接内容的版权申明 -->
-<link rel="copyright" href="copyright.html">
+<link rel="license" href="copyright.html">
 
 <!-- 给出可能的你的另一种语言的文档位置参考 -->
 <link rel="alternate" href="https://es.example.com/" hreflang="es">
@@ -243,17 +190,11 @@
 <link rel="me" href="mailto:name@example.com">
 <link rel="me" href="sms:+15035550125">
 
-<!-- 链接到一个文档，包含当前文档的一个归档链接 -->
-<link rel="archives" href="https://example.com/2003/05/" title="May 2003">
+<!-- 链接到一个描述历史记录、文档或其他具有历史意义的材料的集合的文档。 -->
+<link rel="archives" href="https://example.com/archives/">
 
 <!-- 链接到层次结构中的顶级资源 -->
-<link rel="index" href="https://example.com/" title="DeWitt Clinton">
-
-<!-- 给出该文档的起点 -->
-<link rel="start" href="https://example.com/photos/pattern_recognition_1_about/" title="Pattern Recognition 1">
-
-<!-- 引导当前文档的前述资源序列 -->
-<link rel="prev" href="https://example.com/opensearch/opensearch-and-openid-a-sure-way-to-get-my-attention/" title="OpenSearch and OpenID? A sure way to get my attention.">
+<link rel="index" href="https://example.com/">
 
 <!-- 给出一个自我参考 - 当文档有多个可能的参考时非常有用 -->
 <link rel="self" type="application/atom+xml" href="https://example.com/atomFeed.php?page=3">
@@ -261,7 +202,7 @@
 <!-- 分别是在一系列文件中的第一个、下一个、上一个和最后一个 -->
 <link rel="first" href="https://example.com/atomFeed.php">
 <link rel="next" href="https://example.com/atomFeed.php?page=4">
-<link rel="previous" href="https://example.com/atomFeed.php?page=2">
+<link rel="prev" href="https://example.com/atomFeed.php?page=2">
 <link rel="last" href="https://example.com/atomFeed.php?page=147">
 
 <!-- 当使用第三方服务来维护 blog 时使用 -->
@@ -274,7 +215,7 @@
 <link rel="webmention" href="https://example.com/webmention">
 
 <!-- 加载一个外部的 HTML 文件到当前 HTML 文件中 -->
-<link rel="import" href="component.html">
+<link rel="import" href="/path/to/component.html">
 
 <!-- 打开搜索 -->
 <link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title">
@@ -292,28 +233,16 @@
 <!-- 更多信息：https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 ```
 
-### 不推荐的链接
-以下是不推荐使用的链接关系：
-
-```html
-<link rel="shortcut icon" href="path/to/favicon.ico">
-
-<!-- 没有用的, 专有的和错误的, 详见 https://groups.google.com/a/chromium.org/forum/#!msg/blink-dev/Y_2eFRh9BOs/gULYapoRBwAJ -->
-<link rel="subresource" href="styles.css">
-```
-
 ### 网站图标
 
 ``` html
-<!-- 对于 IE10 及以下 -->
-<!-- 无链接，只需在根目录下放置名为 favicon.ico 的文件 -->
+<!-- 针对 IE 10 及以下版本 -->
+<!-- 如果将 `favicon.ico` 放在根目录下，则无需标签 -->
 
 <!-- 对于 IE 11、Chrome、Firefox、Safari 和 Opera -->
-<link rel="icon" href="path/to/favicon-16.png" sizes="16x16" type="image/png">
-<link rel="icon" href="path/to/favicon-32.png" sizes="32x32" type="image/png">
-<link rel="icon" href="path/to/favicon-48.png" sizes="48x48" type="image/png">
-<link rel="icon" href="path/to/favicon-62.png" sizes="62x62" type="image/png">
-<link rel="icon" href="path/to/favicon-192.png" sizes="192x192" type="image/png">
+<link rel="icon" type="image/png" sizes="16x16" href="/path/to/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/path/to/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="/path/to/favicon-96x96.png">
 <!-- 更多信息: https://bitsofco.de/all-about-favicons-and-touch-icons/ -->
 ```
 
@@ -322,7 +251,7 @@
 
 ## 社交
 
-### Facebook / Open Graph
+### Facebook Open Graph
 
 ``` html
 <meta property="fb:app_id" content="123456789">
@@ -334,14 +263,12 @@
 <meta property="og:site_name" content="Site Name">
 <meta property="og:locale" content="en_US">
 <meta property="article:author" content="">
-<!-- Facebook: https://developers.facebook.com/docs/sharing/webmasters#markup -->
-<!-- Open Graph: http://ogp.me/ -->
 ```
 
 - [Facebook 的 Open Graph 的标记](https://developers.facebook.com/docs/sharing/webmasters#markup)
 - [Open Graph 协议](http://ogp.me/)
 
-### Facebook / Instant Articles
+### Facebook Instant Articles
 
 ``` html
 <meta charset="utf-8">
@@ -357,7 +284,7 @@
 - [Facebook Instant Articles: 创建文章](https://developers.facebook.com/docs/instant-articles/guides/articlecreate)
 - [Instant Articles: 格式参考](https://developers.facebook.com/docs/instant-articles/reference)
 
-### Twitter
+### Twitter Cards
 
 ``` html
 <meta name="twitter:card" content="summary">
@@ -367,8 +294,6 @@
 <meta name="twitter:title" content="Content Title">
 <meta name="twitter:description" content="Content description less than 200 characters">
 <meta name="twitter:image" content="https://example.com/image.jpg">
-<!-- 更多信息: https://dev.twitter.com/cards/getting-started -->
-<!-- 验证: https://dev.twitter.com/docs/cards/validation/validator -->
 ```
 
 - [Twitter 名片：入门指南](https://dev.twitter.com/cards/getting-started)
@@ -421,15 +346,10 @@
 <meta name="apple-mobile-web-app-title" content="应用标题">
 
 <!-- 触摸图标 -->
-<link rel="apple-touch-icon" href="path/to/apple-touch-icon.png">
-<link rel="apple-touch-icon-precomposed" href="path/to/apple-touch-icon-precomposed.png">
-<!-- iOS 8+ 不再支持预组合，你应该只使用 apple-touch-icon。-->
 <!-- 在大多数情况下，在 `<head>` 中，一个 180×180px 触摸图标就已经足够了 -->
-<!-- 如果你想采用自适应的图标，可以设置多个尺寸的图标 -->
-<link rel="apple-touch-icon" sizes="57x57" href="/path/to/icon@57.png">
-<link rel="apple-touch-icon" sizes="72x72" href="/path/to/icon@72.png">
-<link rel="apple-touch-icon" sizes="114x114" href="/path/to/icon@114.png">
-<link rel="apple-touch-icon" sizes="144x144" href="//path/to/icon@144.png">
+<link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+<!-- 注意：iOS 7 上的 Safari 不会对图标产生效果。 -->
+<!-- 较早版本的 Safari 不会对以 `-precomposed.png` 后缀命名的图标文件产生效果。 -->
 
 <!-- 启动画面（已无效） -->
 <link rel="apple-touch-startup-image" href="path/to/startup.png">
@@ -464,7 +384,7 @@
 <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
 
 <!-- 禁用翻译提示 -->
-<meta name="google" value="notranslate">
+<meta name="google" content="notranslate">
 ```
 
 ### Google Chrome Mobile (只针对 Android)
@@ -479,12 +399,8 @@
 <!-- 定义你的网页为 Web 应用 -->
 <meta name="mobile-web-app-capable" content="yes">
 
-<!-- 第一个是官方推荐格式。-->
-<link rel="icon" sizes="192x192" href="nice-highres.png">
-<link rel="icon" sizes="128x128" href="niceicon.png">
-<!-- 所有带 apple 前缀的格式已废弃，所以不要使用它们。-->
-<link rel="apple-touch-icon" sizes="128x128" href="niceicon.png">
-<link rel="apple-touch-icon-precomposed" sizes="128x128" href="niceicon.png">
+<!-- 主屏幕图标 -->
+<link rel="icon" sizes="192x192" href="highres-icon.png">
 ```
 
 - [Google 开发者](https://developer.chrome.com/multidevice/android/installtohomescreen)
@@ -493,52 +409,26 @@
 
 ``` html
 <meta http-equiv="x-ua-compatible" content="ie=edge">
-<meta http-equiv="cleartype" content="on">
 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
 
-<!-- 在 Windows Phone 中的 IE 10 上禁用链接高亮 (https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/) -->
+<!-- IE10: 禁用链接点击高亮 (https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/) -->
 <meta name="msapplication-tap-highlight" content="no">
 
 <!-- 固定网站 (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) -->
-<meta name="application-name" content="Contoso Pinned Site Caption">
-<meta name="msapplication-tooltip" content="Example Tooltip Text">
-<meta name="msapplication-starturl" content="/">
-
-<meta name="msapplication-config" content="http://example.com/browserconfig.xml">
-
-<meta name="msapplication-allowDomainApiCalls" content="true">
-<meta name="msapplication-allowDomainMetaTags" content="true">
-<meta name="msapplication-badge" content="frequency=30; polling-uri=http://example.com/id45453245/polling.xml">
+<meta name="application-name" content="Sample Title">
+<meta name="msapplication-tooltip" content="A description of what this site does.">
+<meta name="msapplication-starturl" content="http://example.com/index.html?pinned=true">
 <meta name="msapplication-navbutton-color" content="#FF3300">
-<meta name="msapplication-notification" content="frequency=60;polling-uri=http://example.com/livetile">
-<meta name="msapplication-square150x150logo" content="path/to/logo.png">
-<meta name="msapplication-square310x310logo" content="path/to/largelogo.png">
-<meta name="msapplication-square70x70logo" content="path/to/tinylogo.png">
-<meta name="msapplication-wide310x150logo" content="path/to/widelogo.png">
-<meta name="msapplication-task" content="name=Check Order Status;action-uri=./orderStatus.aspx?src=IE9;icon-uri=./favicon.ico">
-<meta name="msapplication-task-separator" content="1">
+<meta name="msapplication-window" content="width=800;height=600">
+<meta name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico">
+<meta name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico">
+<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=http://example.com/path/to/file.xml">
 <meta name="msapplication-TileColor" content="#FF3300">
 <meta name="msapplication-TileImage" content="path/to/tileimage.jpg">
-<meta name="msapplication-window" content="width=1024;height=768">
-```
 
-### Microsoft Internet Explorer: 传统，不要使用！
-
-``` html
-<!-- 在 IE 6 中，鼠标悬停在图片上时禁用图像工具栏 (https://msdn.microsoft.com/en-us/library/ms532986(v=vs.85).aspx) -->
-<meta http-equiv="imagetoolbar" content="no">
-
-<!-- 禁用 Windows 主题化的输入框/按钮 (https://support.microsoft.com/en-us/kb/322240) -->
-<meta name="MSThemeCompatible" content="no">
-
-<!-- 禁用只在 IE 6 测试版中出现的一个功能 (https://stackoverflow.com/q/2167301) -->
-<meta name="MSSmartTagsPreventParsing" content="true">
-
-<!-- 页间切换 (https://msdn.microsoft.com/en-us/library/ms532847(v=vs.85).aspx) -->
-<meta http-equiv="Page-Enter" content="revealtrans(duration=2,transition=2)">
-<meta http-equiv="Page-Exit" content="revealtrans(duration=3,transition=12)">
-<meta http-equiv="Site-Enter" content="revealtrans(duration=2,transition=2)">
-<meta http-equiv="Site-Exit" content="revealtrans(duration=3,transition=12)">
+<meta name="msapplication-config" content="http://example.com/browserconfig.xml">
+<meta name="msapplication-notification" content="frequency=60;polling-uri=http://example.com/livetile;polling-uri2=http://example.com/livetile2">
+<meta name="msapplication-task-separator" content="1">
 ```
 
 ## 应用链接
@@ -638,7 +528,15 @@
 
 ## 贡献
 
-开启一个 issue 或一个 pull 请求来提出修改或补充。
+**开启一个 issue 或一个 pull 请求来提出修改或补充。**
+
+### 指南
+
+** HEAD ** 仓库由两个分支组成：
+
+#### 1、`master`
+
+对该分支包含的 `README.md` 文件的修改会自动反映在 [&#60;Head&#62; Cheat Sheet](http://gethead.info/) 网站上。 所有对照表内容的更改都应该针对此文件。
 
 请按照下列步骤 pull 请求：
 
@@ -647,7 +545,13 @@
 - 请不要在自我闭合的元素中使用斜线 —— 即便 HTML5 规范中说，他们是可选的
 - 考虑在文档中加入链接以支持你所提到的变化
 
-### 贡献者
+#### 2. `gh-pages`
+
+该分支负责 [&#60;Head&#62; Cheat Sheet](http://gethead.info/) 网站。我们使用 [Jekyll](https://jekyllrb.com/) 通过 [GitHub Pages](https://pages.github.com/) 服务来部署 `README.md` Markdown 文件。所有网站相关的修改必须集中在这里。
+
+你可能需要通过 [Jekyll 文档](https://jekyllrb.com/docs/home/) 来了解 Jekyll 是如何在该分支上工作的。
+
+## 贡献者
 
 列出所有超级棒的 [贡献者们](https://github.com/joshbuchea/HEAD/graphs/contributors).
 
