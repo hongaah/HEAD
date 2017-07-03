@@ -1,4 +1,8 @@
-# 简介
+# &#60;head&#62;
+
+[![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
+[![Contributors](https://img.shields.io/github/contributors/joshbuchea/head.svg)](https://github.com/joshbuchea/HEAD/graphs/contributors)
+[![Amazon Referral](https://img.shields.io/badge/referral-amazon-yellow.svg)](https://amazon.com/?tag=buchea-20)
 
 一份关于任何可以写入到你的文档中 `<head>` 部分的清单。
 
@@ -561,10 +565,10 @@
 
 ## 翻译者
 
-**[子丶言](http://xiangfa.org/)**
+**[子丶言](https://xiangfa.org/)**
 
 ## 协议
 
-![CC0](http://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")
+![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")
 
 在法律范围内，Josh Buchea 已经放弃了这项工作的所有版权以及相关或邻近的权利。
