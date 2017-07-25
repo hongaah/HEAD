@@ -1,8 +1,7 @@
-# &#60;head&#62;
+# &#60;head&#62; 对照表
 
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Contributors](https://img.shields.io/github/contributors/joshbuchea/head.svg)](https://github.com/joshbuchea/HEAD/graphs/contributors)
-[![Amazon Referral](https://img.shields.io/badge/referral-amazon-yellow.svg)](https://amazon.com/?tag=buchea-20)
 
 一份关于任何可以写入到你的文档中 `<head>` 部分的清单。
 
@@ -55,6 +54,8 @@
 <title>页面标题</title>
 ```
 
+**[⬆ 返回顶部](#目录)**
+
 ## 网页元素
 
 ``` html
@@ -76,6 +77,8 @@
 <script src="script.js"></script>
 <noscript><!--无 JS 时的替代--></noscript>
 ```
+
+**[⬆ 返回顶部](#目录)**
 
 ## Meta 标签
 
@@ -162,6 +165,8 @@
 - [ICBM - 维基百科](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
 - [地理标记 - 维基百科](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
 
+**[⬆ 返回顶部](#目录)**
+
 ## 链接
 
 ``` html
@@ -237,6 +242,8 @@
 <!-- 更多信息：https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 ```
 
+**[⬆ 返回顶部](#目录)**
+
 ### 网站图标
 
 ``` html
@@ -252,6 +259,8 @@
 
 - [所有关于网站图标（和触摸图标）的信息](https://bitsofco.de/all-about-favicons-and-touch-icons/)
 - [网站图标对照表](https://github.com/audreyr/favicon-cheat-sheet)
+
+**[⬆ 返回顶部](#目录)**
 
 ## 社交
 
@@ -272,6 +281,8 @@
 - [Facebook 的 Open Graph 的标记](https://developers.facebook.com/docs/sharing/webmasters#markup)
 - [Open Graph 协议](http://ogp.me/)
 
+**[⬆ 返回顶部](#目录)**
+
 ### Facebook Instant Articles
 
 ``` html
@@ -288,6 +299,8 @@
 - [Facebook Instant Articles: 创建文章](https://developers.facebook.com/docs/instant-articles/guides/articlecreate)
 - [Instant Articles: 格式参考](https://developers.facebook.com/docs/instant-articles/reference)
 
+**[⬆ 返回顶部](#目录)**
+
 ### Twitter Cards
 
 ``` html
@@ -303,6 +316,8 @@
 - [Twitter 名片：入门指南](https://dev.twitter.com/cards/getting-started)
 - [Twitter 名片验证](https://cards-dev.twitter.com/validator)
 
+**[⬆ 返回顶部](#目录)**
+
 ### Google+ / Schema.org
 
 ``` html
@@ -312,6 +327,8 @@
 <meta itemprop="image" content="https://example.com/image.jpg">
 ```
 
+**[⬆ 返回顶部](#目录)**
+
 ### Pinterest
 
 根据他们的[帮助中心](https://help.pinterest.com/en/articles/prevent-people-saving-things-pinterest-your-site)可知，Pinterest 允许你禁止他人保存你网站里的内容。`description` 为可选。
@@ -319,6 +336,8 @@
 ``` html
 <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!">
 ```
+
+**[⬆ 返回顶部](#目录)**
 
 ### OEmbed
 
@@ -332,6 +351,8 @@
 ```
 
 - [oEmbed 格式](http://oembed.com/)
+
+**[⬆ 返回顶部](#目录)**
 
 ## 浏览器 / 平台
 
@@ -365,6 +386,8 @@
 
 - [Apple Meta 标签](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
+**[⬆ 返回顶部](#目录)**
+
 ### Apple Safari
 
 ```html
@@ -382,6 +405,8 @@
 <!-- 更多信息：https://developer.chrome.com/multidevice/android/installtohomescreen -->
 ```
 
+**[⬆ 返回顶部](#目录)**
+
 ### Google Chrome
 
 ``` html
@@ -390,6 +415,8 @@
 <!-- 禁用翻译提示 -->
 <meta name="google" content="notranslate">
 ```
+
+**[⬆ 返回顶部](#目录)**
 
 ### Google Chrome Mobile (只针对 Android)
 
@@ -408,6 +435,8 @@
 ```
 
 - [Google 开发者](https://developer.chrome.com/multidevice/android/installtohomescreen)
+
+**[⬆ 返回顶部](#目录)**
 
 ### Microsoft Internet Explorer
 
@@ -435,6 +464,8 @@
 <meta name="msapplication-task-separator" content="1">
 ```
 
+**[⬆ 返回顶部](#目录)**
+
 ## 应用链接
 
 ``` html
@@ -453,6 +484,8 @@
 
 - [应用链接文档](http://applinks.org/documentation/)
 
+**[⬆ 返回顶部](#目录)**
+
 ## 国内的浏览器
 
 ### 360 浏览器
@@ -461,6 +494,8 @@
 <!-- 选择渲染引擎 -->
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 ```
+
+**[⬆ 返回顶部](#目录)**
 
 ### QQ 移动浏览器
 
@@ -472,6 +507,8 @@
 <!-- 页面将以“应用模式”显示（全屏等）-->
 <meta name="x5-page-mode" content="app">
 ```
+
+**[⬆ 返回顶部](#目录)**
 
 ### UC 移动浏览器
 
@@ -494,6 +531,8 @@
 
 - [UC 浏览器文档](http://www.uc.cn/download/UCBrowser_U3_API.doc)
 
+**[⬆ 返回顶部](#目录)**
+
 ## 注意
 
 ### 性能
@@ -505,10 +544,14 @@
 <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
 ```
 
+**[⬆ 返回顶部](#目录)**
+
 ## 其他资源
 
 - [HTML5 样板文档：HTML 标签](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
 - [HTML5 样板文档：扩展和定制](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
+
+**[⬆ 返回顶部](#目录)**
 
 ## 相关项目
 
@@ -517,9 +560,13 @@
 - [head-it](https://github.com/hemanth/head-it) - `HEAD` 片段的 CLI 接口
 - [vue-head](https://github.com/ktquez/vue-head) - 在 Vue.js 中操作 `HEAD` 标签的 meta 信息
 
+**[⬆ 返回顶部](#目录)**
+
 ## 其他格式
 
 - [PDF](https://gitprint.com/joshbuchea/HEAD/blob/master/README.md)
+
+**[⬆ 返回顶部](#目录)**
 
 ## 翻译
 
@@ -529,6 +576,8 @@
 - [日语/Japanese](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
 - [俄罗斯语/Russian/Русский](https://github.com/Konfuze/HEAD)
 - [土耳其语/Turkish/Türkçe](https://github.com/mkg0/HEAD)
+
+**[⬆ 返回顶部](#目录)**
 
 ## 贡献
 
@@ -555,20 +604,30 @@
 
 你可能需要通过 [Jekyll 文档](https://jekyllrb.com/docs/home/) 来了解 Jekyll 是如何在该分支上工作的。
 
-## 贡献者
+**[⬆ 返回顶部](#目录)**
+
+### 贡献者
 
 列出所有超级棒的 [贡献者们](https://github.com/joshbuchea/HEAD/graphs/contributors).
+
+**[⬆ 返回顶部](#目录)**
 
 ## 作者
 
 **[Josh Buchea](http://joshbuchea.com/)**
 
+**[⬆ 返回顶部](#目录)**
+
 ## 翻译者
 
 **[子丶言](https://xiangfa.org/)**
+
+**[⬆ 返回顶部](#目录)**
 
 ## 协议
 
 ![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")
 
 在法律范围内，Josh Buchea 已经放弃了这项工作的所有版权以及相关或邻近的权利。
+
+**[⬆ 返回顶部](#目录)**
