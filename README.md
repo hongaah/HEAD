@@ -576,6 +576,7 @@
 - [日语/Japanese](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
 - [俄罗斯语/Russian/Русский](https://github.com/Konfuze/HEAD)
 - [土耳其语/Turkish/Türkçe](https://github.com/mkg0/HEAD)
+- [韩语/Korean](https://github.com/Lutece/HEAD)
 
 **[⬆ 返回顶部](#目录)**
 
