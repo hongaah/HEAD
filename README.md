@@ -1,4 +1,4 @@
-# &#60;head&#62; 对照表
+# HEAD
 
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Contributors](https://img.shields.io/github/contributors/joshbuchea/head.svg)](https://github.com/joshbuchea/HEAD/graphs/contributors)
@@ -222,6 +222,9 @@
 
 <!-- 当你在自己的页面上链接到一个 url 时通知它 -->
 <link rel="webmention" href="https://example.com/webmention">
+
+<!-- 启用通过 Micropub 客户端发布你的域名 -->
+<link rel="micropub" href="https://example.com/micropub">
 
 <!-- 加载一个外部的 HTML 文件到当前 HTML 文件中 -->
 <link rel="import" href="/path/to/component.html">
