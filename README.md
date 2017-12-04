@@ -60,26 +60,30 @@
 有效的 `<head>` 元素包括 `meta`、`link`、`title`、`style`、`script`、`noscript` 和 `base`。
 
 ``` html
-<!-- 字符集 -->
+<!-- Meta 标签提供了文档如何被其他技术（如，机器、搜索引擎、浏览器等）理解和渲染的信息。 -->
 <meta charset="utf-8">
 
-<!-- 文档标题 -->
+<!-- 设置文档标题 -->
 <title>页面标题</title>
 
 <!-- 基本 URL 作用于文档中所包含的所有相对 URL -->
 <base href="https://example.com/page.html">
 
-<!-- 外部的 CSS -->
+<!-- 链接外部 CSS 文件 -->
 <link rel="stylesheet" href="styles.css">
 
-<!-- 文档内的 CSS -->
+<!-- 用于文档内的 CSS -->
 <style>
   /* ... */
 </style>
 
-<!-- JavaScript -->
-<script src="script.js"></script>
-<noscript><!--无 JS 时的替代--></noscript>
+<!-- JavaScript & No-JavaScript 标签 -->
+<script>
+  // function(s) go here
+</script>
+<noscript>
+  <!--无 JS 时显示-->
+</noscript>
 ```
 
 **[⬆ 返回顶部](#目录)**
@@ -101,7 +105,7 @@
 <!-- 允许控制资源的过度加载 -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 <!-- 尽早地放置在文档中 -->
-<!-- 仅应用于该标签下的内容 -->
+<!-- 仅应用于该标签下的资源 -->
 
 <!-- Web 应用的名称（仅当网站被用作为一个应用时才使用）-->
 <meta name="application-name" content="应用名称">
@@ -120,15 +124,15 @@
 <!-- 告诉 Google 不提供此页面的翻译 -->
 <meta name="google" content="notranslate">
 
-<!-- 验证所有权 -->
-<meta name="google-site-verification" content="verification_token"><!-- Google 搜索控制台 -->
-<meta name="yandex-verification" content="verification_token"><!-- Yandex 网站管理员 -->
-<meta name="msvalidate.01" content="verification_token"><!-- Bing 网站管理员中心 -->
-<meta name="alexaVerifyID" content="verification_token"><!-- Alexa 控制台 -->
-<meta name="p:domain_verify" content="code from pinterest"><!-- Pinterest 控制台 -->
-<meta name="norton-safeweb-site-verification" content="norton code"><!-- Norton 安全站点 -->
+<!-- 验证网址所有权 -->
+<meta name="google-site-verification" content="verification_token"><!-- Google Search Console -->
+<meta name="yandex-verification" content="verification_token"><!-- Yandex Webmasters -->
+<meta name="msvalidate.01" content="verification_token"><!-- Bing Webmaster Center -->
+<meta name="alexaVerifyID" content="verification_token"><!-- Alexa Console -->
+<meta name="p:domain_verify" content="code from pinterest"><!-- Pinterest Console -->
+<meta name="norton-safeweb-site-verification" content="norton code"><!-- Norton Safe Web -->
 
-<!-- 用来命名软件或用于构建网页（如 - WordPress、Dreamweaver）-->
+<!-- 确定用于构建页面的软件（如 - WordPress、Dreamweaver）-->
 <meta name="generator" content="program">
 
 <!-- 关于你的网站主题的简短描述 -->
@@ -143,7 +147,7 @@
 <!-- 禁用自动检测和格式化可能的电话号码 -->
 <meta name="format-detection" content="telephone=no">
 
-<!-- 通过设置为 “off” 完全退出 DNS 预取 -->
+<!-- 通过设置为 "off" 完全退出 DNS 预取 -->
 <meta http-equiv="x-dns-prefetch-control" content="off">
 
 <!-- 在客户端存储 cookie，web 浏览器的客户端识别 -->
@@ -169,22 +173,22 @@
 ## 链接
 
 ``` html
-<!-- 表明一个 CSS 样式表 -->
+<!-- 指向外部 CSS 样式表 -->
 <link rel="stylesheet" href="https://example.com/styles.css">
 
 <!-- 有助于防止出现内容重复的问题 -->
 <link rel="canonical" href="https://example.com/2010/06/9-things-to-do-before-entering-social-media.html">
 
-<!-- 之前用于包含 icon 链接，但已被废弃并不再使用 -->
+<!-- 之前用于包含 icon 的链接，但目前已被废弃 -->
 <link rel="shortlink" href="https://example.com/?p=42">
 
 <!-- 链接到当前文档的一个 AMP HTML 版本 -->
 <link rel="amphtml" href="https://example.com/path/to/amp-version.html">
 
-<!-- 链接到一个指定 Web 应用程序“安装”证书的 JSON 文件 -->
+<!-- 链接到一个指定 Web 应用程序“安装”凭据的 JSON 文件 -->
 <link rel="manifest" href="manifest.json">
 
-<!-- 链接到文档的作者 -->
+<!-- 链接到关于页面所有者的信息 -->
 <link rel="author" href="humans.txt">
 
 <!-- 指向一个适用于链接内容的版权申明 -->
@@ -198,13 +202,13 @@
 <link rel="me" href="mailto:name@example.com">
 <link rel="me" href="sms:+15035550125">
 
-<!-- 链接到一个描述历史记录、文档或其他具有历史意义的材料的集合的文档。 -->
+<!-- 链接到一个描述历史记录、文档或其他具有历史意义的材料的集合的文档 -->
 <link rel="archives" href="https://example.com/archives/">
 
 <!-- 链接到层次结构中的顶级资源 -->
 <link rel="index" href="https://example.com/">
 
-<!-- 给出一个自我参考 - 当文档有多个可能的参考时非常有用 -->
+<!-- 提供了自我引用 - 当文档有多个可能的引用时非常有用 -->
 <link rel="self" type="application/atom+xml" href="https://example.com/atomFeed.php?page=3">
 
 <!-- 分别是在一系列文件中的第一个、下一个、上一个和最后一个 -->
@@ -213,7 +217,7 @@
 <link rel="prev" href="https://example.com/atomFeed.php?page=2">
 <link rel="last" href="https://example.com/atomFeed.php?page=147">
 
-<!-- 当使用第三方服务来维护 blog 时使用 -->
+<!-- 当使用第三方服务来维护博客时使用 -->
 <link rel="EditURI" href="https://example.com/xmlrpc.php?rsd" type="application/rsd+xml" title="RSD">
 
 <!-- 当另一个 WordPress 博客链接到你的 WordPress 博客或文章时形成一个自动化的评论 -->
@@ -225,7 +229,7 @@
 <!-- 启用通过 Micropub 客户端发布你的域名 -->
 <link rel="micropub" href="https://example.com/micropub">
 
-<!-- 加载一个外部的 HTML 文件到当前 HTML 文件中 -->
+<!-- 加载一个外部的 HTML 文件到当前页面 -->
 <link rel="import" href="/path/to/component.html">
 
 <!-- 打开搜索 -->
@@ -282,6 +286,7 @@
 
 - 📖 [Facebook 的 Open Graph 的标记](https://developers.facebook.com/docs/sharing/webmasters#markup)
 - 📖 [Open Graph 协议](https://ogp.me/)
+- 🛠 [页面验证 - Facebook Sharing Debugger](https://developers.facebook.com/tools/debug/)
 
 ### Twitter Card
 
@@ -296,8 +301,7 @@
 ```
 
 - 📖 [名片入门指南 - Twitter 开发者](https://dev.twitter.com/cards/getting-started)
-- 🛠 [Twitter 名片验证](https://cards-dev.twitter.com/validator)
-
+- 🛠 [页面验证 - Twitter Card Validator](https://cards-dev.twitter.com/validator)
 ### Google+ / Schema.org
 
 ``` html
@@ -407,8 +411,8 @@
 从 Chrome 31 开始，你可以设置你的 Web 应用为“app mode”，如 Safari。
 
 ``` html
-<!-- 链接到一个 manifest 并定义 manifest 的元数据。-->
-<!-- manifest.json 中的例子也可以通过以下链接找到。-->
+<!-- 链接到一个 manifest 并定义 manifest 的元数据 -->
+<!-- manifest.json 中的例子也可以通过以下链接找到 -->
 <link rel="manifest" href="manifest.json">
 
 <!-- 定义你的网页为 Web 应用 -->
@@ -473,16 +477,22 @@
 ``` html
 <!-- 在指定方向上锁定屏幕（锁定横/竖屏） -->
 <meta name="screen-orientation" content="landscape/portrait">
+
 <!-- 全屏显示此页面 -->
 <meta name="full-screen" content="yes">
+
 <!-- 即使在“文本模式”下，UC 浏览器也会显示图片 -->
 <meta name="imagemode" content="force">
+
 <!-- 页面将以“应用模式”显示（全屏、禁止手势等） -->
 <meta name="browsermode" content="application">
+
 <!-- 在此页面禁用 UC 浏览器的“夜间模式” -->
 <meta name="nightmode" content="disable">
+
 <!-- 简化页面，减少数据传输 -->
 <meta name="layoutmode" content="fitscreen">
+
 <!-- 禁用的 UC 浏览器的功能，“当此页面中有较多文本时缩放字体” -->
 <meta name="wap-font-scale" content="no">
 ```
@@ -498,11 +508,13 @@
 <meta property="al:ios:url" content="applinks://docs">
 <meta property="al:ios:app_store_id" content="12345">
 <meta property="al:ios:app_name" content="App Links">
+
 <!-- Android -->
 <meta property="al:android:url" content="applinks://docs">
 <meta property="al:android:app_name" content="App Links">
 <meta property="al:android:package" content="org.applinks">
-<!-- Web 回退 -->
+
+<!-- 页面回退 -->
 <meta property="al:web:url" content="https://applinks.org/documentation">
 ```
 
@@ -513,6 +525,7 @@
 ## 注意
 
 ### 性能
+
 当启用 GZIP 时，移动 `href` 属性到该元素的开头以提高压缩，因为 `href` 属性被用于 `a`、`base` 和 `link` 标签。
 
 示例:
