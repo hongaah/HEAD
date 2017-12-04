@@ -3,7 +3,7 @@
 [![CC0](https://img.shields.io/badge/license-CC0-green.svg)](https://creativecommons.org/publicdomain/zero/1.0/)
 [![Contributors](https://img.shields.io/github/contributors/joshbuchea/head.svg)](https://github.com/joshbuchea/HEAD/graphs/contributors)
 
-一份关于任何可以写入到你的文档中 `<head>` 部分的清单。
+一份关于任何\*可以\*写入到你的文档中 `<head>` 部分的清单。
 
 ## 目录
 
@@ -11,12 +11,12 @@
 - [网页元素](#网页元素)
 - [Meta 标签](#meta-标签)
 - [链接](#链接)
-  - [网站图标](#网站图标)
+- [网站图标](#网站图标)
 - [社交](#社交)
   - [Facebook Open Graph](#facebook-open-graph)
-  - [Facebook Instant Articles](#facebook-instant-articles)
-  - [Twitter Cards](#twitter-cards)
+  - [Twitter Card](#twitter-card)
   - [Google+ / Schema.org](#google--schemaorg)
+  - [Facebook Instant Articles](#facebook-instant-articles)
   - [OEmbed](#oembed)
 - [浏览器 / 平台](#浏览器--平台)
   - [Apple iOS](#apple-ios)
@@ -37,9 +37,8 @@
 - [其他格式](#其他格式)
 - [翻译](#翻译)
 - [贡献](#贡献)
-- [贡献者](#贡献者)
+  - [贡献者](#贡献者)
 - [作者](#作者)
-- [翻译者](#翻译者)
 - [许可](#许可)
 
 ## 最小推荐
@@ -58,7 +57,12 @@
 
 ## 网页元素
 
+有效的 `<head>` 元素包括 `meta`、`link`、`title`、`style`、`script`、`noscript` 和 `base`。
+
 ``` html
+<!-- 字符集 -->
+<meta charset="utf-8">
+
 <!-- 文档标题 -->
 <title>页面标题</title>
 
@@ -85,9 +89,14 @@
 ``` html
 <!-- 设置文档的字符编码 -->
 <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta http-equiv="x-ua-compatible" content="ie=edge"><!-- † -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* -->
+<!-- 
+  以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面*
+
+  † 如果您的项目必须支持 Internet Explorer 11 之前的版本，请使用 content="ie-edge" 标签。
+  
+ -->
 
 <!-- 允许控制资源的过度加载 -->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
@@ -111,23 +120,13 @@
 <!-- 告诉 Google 不提供此页面的翻译 -->
 <meta name="google" content="notranslate">
 
-<!-- 验证 Google 搜索控制台的所有权 -->
-<meta name="google-site-verification" content="verification_token">
-
-<!-- 验证 Yandex 网站管理员的所有权 -->
-<meta name="yandex-verification" content="verification_token">
-
-<!-- 验证 Bing 网站管理员中心的所有权 -->
-<meta name="msvalidate.01" content="verification_token">
-
-<!-- 验证 Alexa 控制台的所有权 -->
-<meta name="alexaVerifyID" content="verification_token">
-
-<!-- 验证 Pinterest 控制台的所有权 -->
-<meta name="p:domain_verify" content="code from pinterest">
-
-<!-- 验证 Norton 安全站点的所有权 -->
-<meta name="norton-safeweb-site-verification" content="norton code">
+<!-- 验证所有权 -->
+<meta name="google-site-verification" content="verification_token"><!-- Google 搜索控制台 -->
+<meta name="yandex-verification" content="verification_token"><!-- Yandex 网站管理员 -->
+<meta name="msvalidate.01" content="verification_token"><!-- Bing 网站管理员中心 -->
+<meta name="alexaVerifyID" content="verification_token"><!-- Alexa 控制台 -->
+<meta name="p:domain_verify" content="code from pinterest"><!-- Pinterest 控制台 -->
+<meta name="norton-safeweb-site-verification" content="norton code"><!-- Norton 安全站点 -->
 
 <!-- 用来命名软件或用于构建网页（如 - WordPress、Dreamweaver）-->
 <meta name="generator" content="program">
@@ -160,10 +159,10 @@
 <meta name="geo.placename" content="city/town"><!-- 如 content="New York City" -->
 ```
 
-- [Google 可以识别的 Meta 标签](https://support.google.com/webmasters/answer/79812?hl=zh-Hans)
-- [WHATWG Wiki: Meta 拓展](https://wiki.whatwg.org/wiki/MetaExtensions)
-- [ICBM - 维基百科](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
-- [地理标记 - 维基百科](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
+- 📖 [Google 可以识别的 Meta 标签](https://support.google.com/webmasters/answer/79812?hl=zh-Hans)
+- 📖 [WHATWG Wiki: Meta 拓展](https://wiki.whatwg.org/wiki/MetaExtensions)
+- 📖 [ICBM - 维基百科](https://en.wikipedia.org/wiki/ICBM_address#Modern_use)
+- 📖 [地理标记 - 维基百科](https://en.wikipedia.org/wiki/Geotagging#HTML_pages)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -247,7 +246,7 @@
 
 **[⬆ 返回顶部](#目录)**
 
-### 网站图标
+## 网站图标
 
 ``` html
 <!-- 针对 IE 10 及以下版本 -->
@@ -260,8 +259,8 @@
 <!-- 更多信息: https://bitsofco.de/all-about-favicons-and-touch-icons/ -->
 ```
 
-- [所有关于网站图标（和触摸图标）的信息](https://bitsofco.de/all-about-favicons-and-touch-icons/)
-- [网站图标对照表](https://github.com/audreyr/favicon-cheat-sheet)
+- 📖 [所有关于网站图标（和触摸图标）的信息](https://bitsofco.de/all-about-favicons-and-touch-icons/)
+- 📖 [网站图标对照表](https://github.com/audreyr/favicon-cheat-sheet)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -281,30 +280,10 @@
 <meta property="article:author" content="">
 ```
 
-- [Facebook 的 Open Graph 的标记](https://developers.facebook.com/docs/sharing/webmasters#markup)
-- [Open Graph 协议](http://ogp.me/)
+- 📖 [Facebook 的 Open Graph 的标记](https://developers.facebook.com/docs/sharing/webmasters#markup)
+- 📖 [Open Graph 协议](https://ogp.me/)
 
-**[⬆ 返回顶部](#目录)**
-
-### Facebook Instant Articles
-
-``` html
-<meta charset="utf-8">
-<meta property="op:markup_version" content="v1.0">
-
-<!-- 你的文章的 Web 版网址 -->
-<link rel="canonical" href="http://example.com/article.html">
-
-<!-- 用于该文章的样式 -->
-<meta property="fb:article_style" content="myarticlestyle">
-```
-
-- [Facebook Instant Articles: 创建文章](https://developers.facebook.com/docs/instant-articles/guides/articlecreate)
-- [Instant Articles: 格式参考](https://developers.facebook.com/docs/instant-articles/reference)
-
-**[⬆ 返回顶部](#目录)**
-
-### Twitter Cards
+### Twitter Card
 
 ``` html
 <meta name="twitter:card" content="summary">
@@ -316,10 +295,8 @@
 <meta name="twitter:image" content="https://example.com/image.jpg">
 ```
 
-- [Twitter 名片：入门指南](https://dev.twitter.com/cards/getting-started)
-- [Twitter 名片验证](https://cards-dev.twitter.com/validator)
-
-**[⬆ 返回顶部](#目录)**
+- 📖 [名片入门指南 - Twitter 开发者](https://dev.twitter.com/cards/getting-started)
+- 🛠 [Twitter 名片验证](https://cards-dev.twitter.com/validator)
 
 ### Google+ / Schema.org
 
@@ -330,8 +307,6 @@
 <meta itemprop="image" content="https://example.com/image.jpg">
 ```
 
-**[⬆ 返回顶部](#目录)**
-
 ### Pinterest
 
 根据他们的[帮助中心](https://help.pinterest.com/en/articles/prevent-people-saving-things-pinterest-your-site)可知，Pinterest 允许你禁止他人保存你网站里的内容。`description` 为可选。
@@ -340,20 +315,34 @@
 <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!">
 ```
 
-**[⬆ 返回顶部](#目录)**
+### Facebook Instant Articles
+
+``` html
+<meta charset="utf-8">
+<meta property="op:markup_version" content="v1.0">
+
+<!-- 你的文章的 Web 版网址 -->
+<link rel="canonical" href="https://example.com/article.html">
+
+<!-- 用于该文章的样式 -->
+<meta property="fb:article_style" content="myarticlestyle">
+```
+
+- 📖 [创建文章 - Instant Articles](https://developers.facebook.com/docs/instant-articles/guides/articlecreate)
+- 📖 [代码示例 - Instant Articles](https://developers.facebook.com/docs/instant-articles/reference)
 
 ### OEmbed
 
 ``` html
 <link rel="alternate" type="application/json+oembed"
-  href="http://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;format=json"
+  href="https://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;format=json"
   title="oEmbed Profile: JSON">
 <link rel="alternate" type="text/xml+oembed"
-  href="http://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;format=xml"
+  href="https://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;format=xml"
   title="oEmbed Profile: XML">
 ```
 
-- [oEmbed 格式](http://oembed.com/)
+- 📖 [oEmbed 格式](https://oembed.com/)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -376,8 +365,6 @@
 <!-- 触摸图标 -->
 <!-- 在大多数情况下，在 `<head>` 中，一个 180×180px 触摸图标就已经足够了 -->
 <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
-<!-- 注意：iOS 7 上的 Safari 不会对图标产生效果。 -->
-<!-- 较早版本的 Safari 不会对以 `-precomposed.png` 后缀命名的图标文件产生效果。 -->
 
 <!-- 启动画面（已无效） -->
 <link rel="apple-touch-startup-image" href="path/to/startup.png">
@@ -387,9 +374,7 @@
 <link rel="alternate" href="ios-app://APP-ID/http/url-sample.com">
 ```
 
-- [Apple Meta 标签](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
-
-**[⬆ 返回顶部](#目录)**
+- 📖 [Apple Meta 标签](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
 
 ### Apple Safari
 
@@ -408,8 +393,6 @@
 <!-- 更多信息：https://developer.chrome.com/multidevice/android/installtohomescreen -->
 ```
 
-**[⬆ 返回顶部](#目录)**
-
 ### Google Chrome
 
 ``` html
@@ -418,8 +401,6 @@
 <!-- 禁用翻译提示 -->
 <meta name="google" content="notranslate">
 ```
-
-**[⬆ 返回顶部](#目录)**
 
 ### Google Chrome Mobile (只针对 Android)
 
@@ -434,12 +415,10 @@
 <meta name="mobile-web-app-capable" content="yes">
 
 <!-- 主屏幕图标 -->
-<link rel="icon" sizes="192x192" href="highres-icon.png">
+<link rel="icon" sizes="192x192" href="/path/to/highres-icon.png">
 ```
 
-- [Google 开发者](https://developer.chrome.com/multidevice/android/installtohomescreen)
-
-**[⬆ 返回顶部](#目录)**
+- 📖 [Google 开发者](https://developer.chrome.com/multidevice/android/installtohomescreen)
 
 ### Microsoft Internet Explorer
 
@@ -453,39 +432,19 @@
 <!-- 固定网站 (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) -->
 <meta name="application-name" content="Sample Title">
 <meta name="msapplication-tooltip" content="A description of what this site does.">
-<meta name="msapplication-starturl" content="http://example.com/index.html?pinned=true">
+<meta name="msapplication-starturl" content="https://example.com/index.html?pinned=true">
 <meta name="msapplication-navbutton-color" content="#FF3300">
 <meta name="msapplication-window" content="width=800;height=600">
-<meta name="msapplication-task" content="name=Task 1;action-uri=http://host/Page1.html;icon-uri=http://host/icon1.ico">
-<meta name="msapplication-task" content="name=Task 2;action-uri=http://microsoft.com/Page2.html;icon-uri=http://host/icon2.ico">
-<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=http://example.com/path/to/file.xml">
+<meta name="msapplication-task" content="name=Task 1;action-uri=https://host/Page1.html;icon-uri=https://host/icon1.ico">
+<meta name="msapplication-task" content="name=Task 2;action-uri=https://microsoft.com/Page2.html;icon-uri=https://host/icon2.ico">
+<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://example.com/path/to/file.xml">
 <meta name="msapplication-TileColor" content="#FF3300">
 <meta name="msapplication-TileImage" content="path/to/tileimage.jpg">
 
-<meta name="msapplication-config" content="http://example.com/browserconfig.xml">
-<meta name="msapplication-notification" content="frequency=60;polling-uri=http://example.com/livetile;polling-uri2=http://example.com/livetile2">
+<meta name="msapplication-config" content="https://example.com/browserconfig.xml">
+<meta name="msapplication-notification" content="frequency=60;polling-uri=https://example.com/livetile;polling-uri2=https://example.com/livetile2">
 <meta name="msapplication-task-separator" content="1">
 ```
-
-**[⬆ 返回顶部](#目录)**
-
-## 应用链接
-
-``` html
-<!-- iOS -->
-<meta property="al:ios:url" content="applinks://docs">
-<meta property="al:ios:app_store_id" content="12345">
-<meta property="al:ios:app_name" content="App Links">
-<!-- Android -->
-<meta property="al:android:url" content="applinks://docs">
-<meta property="al:android:app_name" content="App Links">
-<meta property="al:android:package" content="org.applinks">
-<!-- Web 回退 -->
-<meta property="al:web:url" content="http://applinks.org/documentation">
-<!-- 更多信息：http://applinks.org/documentation/ -->
-```
-
-- [应用链接文档](http://applinks.org/documentation/)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -498,8 +457,6 @@
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 ```
 
-**[⬆ 返回顶部](#目录)**
-
 ### QQ 移动浏览器
 
 ``` html
@@ -510,8 +467,6 @@
 <!-- 页面将以“应用模式”显示（全屏等）-->
 <meta name="x5-page-mode" content="app">
 ```
-
-**[⬆ 返回顶部](#目录)**
 
 ### UC 移动浏览器
 
@@ -532,7 +487,26 @@
 <meta name="wap-font-scale" content="no">
 ```
 
-- [UC 浏览器文档](http://www.uc.cn/download/UCBrowser_U3_API.doc)
+- 📖 [UC 浏览器文档](https://www.uc.cn/download/UCBrowser_U3_API.doc)
+
+**[⬆ 返回顶部](#目录)**
+
+## 应用链接
+
+``` html
+<!-- iOS -->
+<meta property="al:ios:url" content="applinks://docs">
+<meta property="al:ios:app_store_id" content="12345">
+<meta property="al:ios:app_name" content="App Links">
+<!-- Android -->
+<meta property="al:android:url" content="applinks://docs">
+<meta property="al:android:app_name" content="App Links">
+<meta property="al:android:package" content="org.applinks">
+<!-- Web 回退 -->
+<meta property="al:web:url" content="https://applinks.org/documentation">
+```
+
+- 📖 [应用链接文档](https://applinks.org/documentation/)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -551,8 +525,8 @@
 
 ## 其他资源
 
-- [HTML5 样板文档：HTML 标签](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
-- [HTML5 样板文档：扩展和定制](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
+- 📖 [HTML5 样板文档：HTML 标签](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/html.md)
+- 📖 [HTML5 样板文档：扩展和定制](https://github.com/h5bp/html5-boilerplate/blob/master/dist/doc/extend.md)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -567,19 +541,20 @@
 
 ## 其他格式
 
-- [PDF](https://gitprint.com/joshbuchea/HEAD/blob/master/README.md)
+- 📄 [PDF](https://gitprint.com/joshbuchea/HEAD/blob/master/README.md)
 
 **[⬆ 返回顶部](#目录)**
 
 ## 翻译
 
-- [英语/English](https://github.com/joshbuchea/HEAD)
-- [巴西葡萄牙语/Brazilian Portuguese](https://github.com/Webschool-io/HEAD)
-- [意大利语/Italian](https://github.com/Fakkio/HEAD)
-- [日语/Japanese](http://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
-- [俄罗斯语/Russian/Русский](https://github.com/Konfuze/HEAD)
-- [土耳其语/Turkish/Türkçe](https://github.com/mkg0/HEAD)
-- [韩语/Korean](https://github.com/Lutece/HEAD)
+- 🇺🇸 [英语/English](https://github.com/joshbuchea/HEAD)
+- 🇨🇳 [简体中文/Chinese (Simplified)](https://github.com/Amery2010/HEAD)
+- 🇧🇷 [巴西葡萄牙语/Brazilian Portuguese](https://github.com/Webschool-io/HEAD)
+- 🇮🇹 [意大利语/Italian](https://github.com/Fakkio/HEAD)
+- 🇯🇵 [日语/Japanese](https://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
+- 🇰🇷 [韩语/Korean](https://github.com/Lutece/HEAD)
+- 🇷🇺 [俄罗斯语/Russian/Русский](https://github.com/Konfuze/HEAD)
+- 🇹🇷 [土耳其语/Turkish/Türkçe](https://github.com/mkg0/HEAD)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -593,7 +568,7 @@
 
 #### 1、`master`
 
-对该分支包含的 `README.md` 文件的修改会自动反映在 [&#60;Head&#62; Cheat Sheet](http://gethead.info/) 网站上。 所有对照表内容的更改都应该针对此文件。
+对该分支包含的 `README.md` 文件的修改会自动反映在 [gethead.info](https://gethead.info/) 网站上。 所有对照表内容的更改都应该针对此文件。
 
 请按照下列步骤 pull 请求：
 
@@ -604,34 +579,24 @@
 
 #### 2. `gh-pages`
 
-该分支负责 [&#60;Head&#62; Cheat Sheet](http://gethead.info/) 网站。我们使用 [Jekyll](https://jekyllrb.com/) 通过 [GitHub Pages](https://pages.github.com/) 服务来部署 `README.md` Markdown 文件。所有网站相关的修改必须集中在这里。
+该分支负责 [gethead.info](https://gethead.info/) 网站。我们使用 [Jekyll](https://jekyllrb.com/) 通过 [GitHub Pages](https://pages.github.com/) 服务来部署 `README.md` Markdown 文件。所有网站相关的修改必须集中在这里。
 
 你可能需要通过 [Jekyll 文档](https://jekyllrb.com/docs/home/) 来了解 Jekyll 是如何在该分支上工作的。
-
-**[⬆ 返回顶部](#目录)**
 
 ### 贡献者
 
 列出所有超级棒的 [贡献者们](https://github.com/joshbuchea/HEAD/graphs/contributors).
 
-**[⬆ 返回顶部](#目录)**
-
 ## 作者
 
-**[Josh Buchea](http://joshbuchea.com/)**
+**[Josh Buchea](https://joshbuchea.com/)**
 
-**[⬆ 返回顶部](#目录)**
-
-## 翻译者
+### 翻译者
 
 **[子丶言](https://xiangfa.org/)**
-
-**[⬆ 返回顶部](#目录)**
 
 ## 协议
 
 ![CC0](https://i.creativecommons.org/p/zero/1.0/88x31.png "CC0")
-
-在法律范围内，Josh Buchea 已经放弃了这项工作的所有版权以及相关或邻近的权利。
 
 **[⬆ 返回顶部](#目录)**
