@@ -15,6 +15,7 @@
 - [社交](#社交)
   - [Facebook Open Graph](#facebook-open-graph)
   - [Twitter Card](#twitter-card)
+  - [Twitter Privacy](#twitter-privacy)
   - [Google+ / Schema.org](#google--schemaorg)
   - [Facebook Instant Articles](#facebook-instant-articles)
   - [OEmbed](#oembed)
@@ -60,7 +61,7 @@
 有效的 `<head>` 元素包括 `meta`、`link`、`title`、`style`、`script`、`noscript` 和 `base`。
 
 ``` html
-<!-- Meta 标签提供了文档如何被其他技术（如，机器、搜索引擎、浏览器等）理解和渲染的信息。 -->
+<!-- 设置此文档的字符编码（如果没有设置），以便 UTF-8 范围中的所有字符（如 emoji）都能正确显示 -->
 <meta charset="utf-8">
 
 <!-- 设置文档标题 -->
@@ -90,8 +91,10 @@
 
 ## Meta 标签
 
+`<meta>` 标签提供了文档如何被其他技术（如，机器、搜索引擎、浏览器等）理解和渲染的信息。
+
 ``` html
-<!-- 设置文档的字符编码 -->
+<!-- 设置此文档的字符编码（如果没有设置），以便 UTF-8 范围中的所有字符（如 emoji）都能正确显示 -->
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge"><!-- † -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -102,16 +105,14 @@
   
  -->
 
-<!-- 允许控制资源的过度加载 -->
+<!-- 允许控制资源从何处加载。在 <head> 中尽可能地靠前放置，因为该标签仅适用于在其之后声明的资源。-->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
-<!-- 尽早地放置在文档中 -->
-<!-- 仅应用于该标签下的资源 -->
 
 <!-- Web 应用的名称（仅当网站被用作为一个应用时才使用）-->
 <meta name="application-name" content="应用名称">
 
 <!-- 针对页面的简短描述（限制 150 字符）-->
-<!-- 在*某些*情况下，该描述是被用作搜索结果展示片段的一部分 -->
+<!-- 此内容*可能*被用作搜索引擎结果的一部分。 -->
 <meta name="description" content="一个页面描述">
 
 <!-- 控制搜索引擎的抓取和索引行为 -->
@@ -240,12 +241,12 @@
 <link rel="alternate" href="https://example.com/feed.atom" type="application/atom+xml" title="Atom 0.3">
 
 <!-- 预取，预载，预浏览 -->
+<!-- 更多信息：https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 <link rel="dns-prefetch" href="//example.com/">
 <link rel="preconnect" href="https://www.example.com/">
 <link rel="prefetch" href="https://www.example.com/">
 <link rel="prerender" href="https://example.com/">
 <link rel="preload" href="image.png" as="image">
-<!-- 更多信息：https://css-tricks.com/prefetching-preloading-prebrowsing/ -->
 ```
 
 **[⬆ 返回顶部](#目录)**
@@ -302,6 +303,14 @@
 
 - 📖 [名片入门指南 - Twitter 开发者](https://dev.twitter.com/cards/getting-started)
 - 🛠 [页面验证 - Twitter Card Validator](https://cards-dev.twitter.com/validator)
+
+### Twitter Privacy
+如果你在自己的网站中嵌入了推文，Twitter 可以使用你网站上的信息为 Twitter 用户定制内容和建议。 [更多关于 Twitter 隐私选项的信息](https://dev.twitter.com/web/overview/privacy#what-privacy-options-do-website-publishers-have).
+``` html
+<!-- 禁止 Twitter 使用你网站上的信息用于提供个性化的目的 -->
+<meta name="twitter:dnt" content="on">
+```
+
 ### Google+ / Schema.org
 
 ``` html
