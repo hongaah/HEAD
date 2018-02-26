@@ -17,22 +17,19 @@
   - [Twitter Card](#twitter-card)
   - [Twitter Privacy](#twitter-privacy)
   - [Google+ / Schema.org](#google--schemaorg)
+  - [Pinterest](#pinterest)
   - [Facebook Instant Articles](#facebook-instant-articles)
   - [OEmbed](#oembed)
 - [浏览器 / 平台](#浏览器--平台)
   - [Apple iOS](#apple-ios)
-  - [Apple Safari](#apple-safari)
   - [Google Android](#google-android)
   - [Google Chrome](#google-chrome)
-  - [Google Chrome Mobile (只针对 Android)](#google-chrome-mobile只针对-android)
   - [Microsoft Internet Explorer](#microsoft-internet-explorer)
 - [国内的浏览器](#国内的浏览器)
   - [360 浏览器](#360-浏览器)
   - [QQ 移动浏览器](#qq-移动浏览器)
   - [UC 移动浏览器](#uc-移动浏览器)
 - [应用链接](#应用链接)
-- [注意](#注意)
-  - [性能](#性能)
 - [其他资源](#其他资源)
 - [相关项目](#相关项目)
 - [其他格式](#其他格式)
@@ -44,13 +41,17 @@
 
 ## 最小推荐
 
-下面是基本的、最低限度的网站基本标签：
+以下是构成任何 Web 页面（网站/应用程序）的基本要素：
 
 ```html
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- 以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面* -->
+<!--
+  以上 3 个 meta 标签 *必须* 放在 head 之前，以确保正确的文档呈现；
+  其他任何 head 元素 *必须* 在这些标签之后。
+  † 如果你的项目需要支持 Internet Explorer 11 之前的版本，请使用 content="ie-edge" 标签。
+-->
 <title>页面标题</title>
 ```
 
@@ -60,17 +61,19 @@
 
 有效的 `<head>` 元素包括 `meta`、`link`、`title`、`style`、`script`、`noscript` 和 `base`。
 
-``` html
-<!-- 设置此文档的字符编码（如果没有设置），以便 UTF-8 范围中的所有字符（如 emoji）都能正确显示 -->
+这些元素提供了如何通过如浏览器，搜索引擎，网络爬虫等网络技术来感知和呈现文档的信息。
+
+```html
+<!-- 设置此文档的字符编码，以便 UTF-8 范围中的所有字符（如 emoji）都能正确显示 -->
 <meta charset="utf-8">
 
 <!-- 设置文档标题 -->
 <title>页面标题</title>
 
-<!-- 基本 URL 作用于文档中所包含的所有相对 URL -->
+<!-- 设置文档中所有相对链接的基础链接 -->
 <base href="https://example.com/page.html">
 
-<!-- 链接外部 CSS 文件 -->
+<!-- 链接一个外部 CSS 文件 -->
 <link rel="stylesheet" href="styles.css">
 
 <!-- 用于文档内的 CSS -->
@@ -91,25 +94,24 @@
 
 ## Meta 标签
 
-`<meta>` 标签提供了文档如何被其他技术（如，机器、搜索引擎、浏览器等）理解和渲染的信息。
-
-``` html
-<!-- 设置此文档的字符编码（如果没有设置），以便 UTF-8 范围中的所有字符（如 emoji）都能正确显示 -->
+```html
+<!--
+  以上 3 个 meta 标签 *必须* 放在 head 之前，以确保正确的文档呈现；
+  其他任何 head 元素 *必须* 在这些标签之后。
+  † 如果你的项目需要支持 Internet Explorer 11 之前的版本，请使用 content="ie-edge" 标签。
+-->
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge"><!-- † -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<!-- 
-  以上 3 个 meta 标签 *必须* 放在 head 的最前面；其他任何的 head 内容必须在这些标签的 *后面*
-
-  † 如果您的项目必须支持 Internet Explorer 11 之前的版本，请使用 content="ie-edge" 标签。
-  
- -->
 
 <!-- 允许控制资源从何处加载。在 <head> 中尽可能地靠前放置，因为该标签仅适用于在其之后声明的资源。-->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
 
 <!-- Web 应用的名称（仅当网站被用作为一个应用时才使用）-->
 <meta name="application-name" content="应用名称">
+
+<!-- Chrome、Firefox OS 和 Opera 的主题颜色 -->
+<meta name="theme-color" content="#4285f4">
 
 <!-- 针对页面的简短描述（限制 150 字符）-->
 <!-- 此内容*可能*被用作搜索引擎结果的一部分。 -->
@@ -173,15 +175,12 @@
 
 ## 链接
 
-``` html
-<!-- 指向外部 CSS 样式表 -->
+```html
+<!-- 指向一个外部 CSS 样式表 -->
 <link rel="stylesheet" href="https://example.com/styles.css">
 
 <!-- 有助于防止出现内容重复的问题 -->
-<link rel="canonical" href="https://example.com/2010/06/9-things-to-do-before-entering-social-media.html">
-
-<!-- 之前用于包含 icon 的链接，但目前已被废弃 -->
-<link rel="shortlink" href="https://example.com/?p=42">
+<link rel="canonical" href="http://example.com/article/?page=2">
 
 <!-- 链接到当前文档的一个 AMP HTML 版本 -->
 <link rel="amphtml" href="https://example.com/path/to/amp-version.html">
@@ -207,16 +206,16 @@
 <link rel="archives" href="https://example.com/archives/">
 
 <!-- 链接到层次结构中的顶级资源 -->
-<link rel="index" href="https://example.com/">
+<link rel="index" href="http://example.com/article/">
 
 <!-- 提供了自我引用 - 当文档有多个可能的引用时非常有用 -->
-<link rel="self" type="application/atom+xml" href="https://example.com/atomFeed.php?page=3">
+<link rel="self" type="application/atom+xml" href="http://example.com/atom.xml">
 
-<!-- 分别是在一系列文件中的第一个、下一个、上一个和最后一个 -->
-<link rel="first" href="https://example.com/atomFeed.php">
-<link rel="next" href="https://example.com/atomFeed.php?page=4">
-<link rel="prev" href="https://example.com/atomFeed.php?page=2">
-<link rel="last" href="https://example.com/atomFeed.php?page=147">
+<!-- 分别是一系列页面中的第一个，最后一个，上一个和下一个页面 -->
+<link rel="first" href="http://example.com/article/">
+<link rel="last" href="http://example.com/article/?page=42">
+<link rel="prev" href="http://example.com/article/?page=1">
+<link rel="next" href="http://example.com/article/?page=3">
 
 <!-- 当使用第三方服务来维护博客时使用 -->
 <link rel="EditURI" href="https://example.com/xmlrpc.php?rsd" type="application/rsd+xml" title="RSD">
@@ -229,9 +228,6 @@
 
 <!-- 启用通过 Micropub 客户端发布你的域名 -->
 <link rel="micropub" href="https://example.com/micropub">
-
-<!-- 加载一个外部的 HTML 文件到当前页面 -->
-<link rel="import" href="/path/to/component.html">
 
 <!-- 打开搜索 -->
 <link rel="search" href="/open-search.xml" type="application/opensearchdescription+xml" title="Search Title">
@@ -249,23 +245,30 @@
 <link rel="preload" href="image.png" as="image">
 ```
 
+- 📖 [链接关系](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
+
 **[⬆ 返回顶部](#目录)**
 
 ## 网站图标
 
-``` html
+```html
 <!-- 针对 IE 10 及以下版本 -->
 <!-- 如果将 `favicon.ico` 放在根目录下，则无需标签 -->
 
-<!-- 对于 IE 11、Chrome、Firefox、Safari 和 Opera -->
-<link rel="icon" type="image/png" sizes="16x16" href="/path/to/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="/path/to/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="/path/to/favicon-96x96.png">
-<!-- 更多信息: https://bitsofco.de/all-about-favicons-and-touch-icons/ -->
+<!-- 我们目前需要提供的最大的网站图标尺寸 -->
+<link rel="icon" sizes="192x192" href="/path/to/icon.png">
+
+<!-- Apple 触摸图标 (尺寸同样是 192x192) -->
+<link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
+
+<!-- Safari 固定选项卡图标 -->
+<link rel="mask-icon" href="/path/to/icon.svg" color="blue">
 ```
 
 - 📖 [所有关于网站图标（和触摸图标）的信息](https://bitsofco.de/all-about-favicons-and-touch-icons/)
+- 📖 [创建固定选项卡图标](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/pinnedTabs/pinnedTabs.html)
 - 📖 [网站图标对照表](https://github.com/audreyr/favicon-cheat-sheet)
+- 📖 [网址图标 & 浏览器颜色表](https://developers.google.com/web/fundamentals/design-and-ux/browser-customization/)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -273,7 +276,7 @@
 
 ### Facebook Open Graph
 
-``` html
+```html
 <meta property="fb:app_id" content="123456789">
 <meta property="og:url" content="https://example.com/page.html">
 <meta property="og:type" content="website">
@@ -291,7 +294,7 @@
 
 ### Twitter Card
 
-``` html
+```html
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@site_account">
 <meta name="twitter:creator" content="@individual_account">
@@ -306,31 +309,37 @@
 
 ### Twitter Privacy
 如果你在自己的网站中嵌入了推文，Twitter 可以使用你网站上的信息为 Twitter 用户定制内容和建议。 [更多关于 Twitter 隐私选项的信息](https://dev.twitter.com/web/overview/privacy#what-privacy-options-do-website-publishers-have).
-``` html
+```html
 <!-- 禁止 Twitter 使用你网站上的信息用于提供个性化的目的 -->
 <meta name="twitter:dnt" content="on">
 ```
 
 ### Google+ / Schema.org
 
-``` html
-<link href="https://plus.google.com/+YourPage" rel="publisher">
+```html
+<html lang="" itemscope itemtype="http://schema.org/Article">
+<link rel="author" href="">
+<link rel="publisher" href="">
 <meta itemprop="name" content="内容标题">
 <meta itemprop="description" content="内容描述少于 200 个字符">
-<meta itemprop="image" content="https://example.com/image.jpg">
+<meta itemprop="image" content="http://example.com/image.jpg">
 ```
+
+**注意:** 这个标记需要将属性添加到你的顶级 html 标签中
+
+- 🛠 请在 [结构化数据测试工具](https://developers.google.com/structured-data/testing-tool/) 上测试你的页面
 
 ### Pinterest
 
 根据他们的[帮助中心](https://help.pinterest.com/en/articles/prevent-people-saving-things-pinterest-your-site)可知，Pinterest 允许你禁止他人保存你网站里的内容。`description` 为可选。
 
-``` html
+```html
 <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!">
 ```
 
 ### Facebook Instant Articles
 
-``` html
+```html
 <meta charset="utf-8">
 <meta property="op:markup_version" content="v1.0">
 
@@ -346,7 +355,7 @@
 
 ### OEmbed
 
-``` html
+```html
 <link rel="alternate" type="application/json+oembed"
   href="https://example.com/services/oembed?url=http%3A%2F%2Fexample.com%2Ffoo%2F&amp;format=json"
   title="oEmbed Profile: JSON">
@@ -363,7 +372,7 @@
 
 ### Apple iOS
 
-``` html
+```html
 <!-- 智能应用 Banner -->
 <meta name="apple-itunes-app" content="app-id=APP_ID,affiliate-data=AFFILIATE_ID,app-argument=SOME_TEXT">
 
@@ -371,34 +380,31 @@
 <meta name="format-detection" content="telephone=no">
 
 <!-- 添加到主屏幕 -->
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="apple-mobile-web-app-title" content="应用标题">
-
-<!-- 触摸图标 -->
-<!-- 在大多数情况下，在 `<head>` 中，一个 180×180px 触摸图标就已经足够了 -->
+<!-- 启动图标 (大于等于 180x180px) -->
 <link rel="apple-touch-icon" href="/path/to/apple-touch-icon.png">
 
-<!-- 启动画面（已无效） -->
-<link rel="apple-touch-startup-image" href="path/to/startup.png">
+<!-- 启动屏幕图片 -->
+<link rel="apple-touch-startup-image" href="/path/to/launch.png">
+
+<!-- 启动图标的标题 -->
+<meta name="apple-mobile-web-app-title" content="应用标题">
+
+<!-- 启用独立（全屏）模式 -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<!-- 状态栏外观（除非启用独立模式，否则无效） -->
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
 
 <!-- iOS 应用深层链接 -->
 <meta name="apple-itunes-app" content="app-id=APP-ID, app-argument=http/url-sample.com">
 <link rel="alternate" href="ios-app://APP-ID/http/url-sample.com">
 ```
 
-- 📖 [Apple Meta 标签](https://developer.apple.com/library/safari/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html)
-
-### Apple Safari
-
-```html
-<!-- 固定网站 -->
-<link rel="mask-icon" href="path/to/icon.svg" color="red">
-```
+- 📖 [配置 Web 应用程序](https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html)
 
 ### Google Android
 
-``` html
+```html
 <meta name="theme-color" content="#E64545">
 
 <!-- 添加到主屏幕 -->
@@ -408,35 +414,20 @@
 
 ### Google Chrome
 
-``` html
+```html
 <link rel="chrome-webstore-item" href="https://chrome.google.com/webstore/detail/APP_ID">
 
 <!-- 禁用翻译提示 -->
 <meta name="google" content="notranslate">
 ```
 
-### Google Chrome Mobile (只针对 Android)
-
-从 Chrome 31 开始，你可以设置你的 Web 应用为“app mode”，如 Safari。
-
-``` html
-<!-- 链接到一个 manifest 并定义 manifest 的元数据 -->
-<!-- manifest.json 中的例子也可以通过以下链接找到 -->
-<link rel="manifest" href="manifest.json">
-
-<!-- 定义你的网页为 Web 应用 -->
-<meta name="mobile-web-app-capable" content="yes">
-
-<!-- 主屏幕图标 -->
-<link rel="icon" sizes="192x192" href="/path/to/highres-icon.png">
-```
-
-- 📖 [Google 开发者](https://developer.chrome.com/multidevice/android/installtohomescreen)
-
 ### Microsoft Internet Explorer
 
-``` html
+```html
+<!-- 强制 IE 8/9/10 使用其最新的渲染引擎 -->
 <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+<!-- 通过 Skype Toolbar 浏览器扩展功能禁用自动检测和格式化可能的电话号码 -->
 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
 
 <!-- IE10: 禁用链接点击高亮 (https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/) -->
@@ -465,14 +456,14 @@
 
 ### 360 浏览器
 
-``` html
+```html
 <!-- 选择渲染引擎 -->
 <meta name="renderer" content="webkit|ie-comp|ie-stand">
 ```
 
 ### QQ 移动浏览器
 
-``` html
+```html
 <!-- 在指定方向上锁定屏幕（锁定横/竖屏） -->
 <meta name="x5-orientation" content="landscape/portrait">
 <!-- 全屏显示此页面 -->
@@ -483,7 +474,7 @@
 
 ### UC 移动浏览器
 
-``` html
+```html
 <!-- 在指定方向上锁定屏幕（锁定横/竖屏） -->
 <meta name="screen-orientation" content="landscape/portrait">
 
@@ -512,7 +503,7 @@
 
 ## 应用链接
 
-``` html
+```html
 <!-- iOS -->
 <meta property="al:ios:url" content="applinks://docs">
 <meta property="al:ios:app_store_id" content="12345">
@@ -528,20 +519,6 @@
 ```
 
 - 📖 [应用链接文档](https://applinks.org/documentation/)
-
-**[⬆ 返回顶部](#目录)**
-
-## 注意
-
-### 性能
-
-当启用 GZIP 时，移动 `href` 属性到该元素的开头以提高压缩，因为 `href` 属性被用于 `a`、`base` 和 `link` 标签。
-
-示例:
-
-``` html
-<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700" rel="stylesheet">
-```
 
 **[⬆ 返回顶部](#目录)**
 
