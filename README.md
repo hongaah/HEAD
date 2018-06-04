@@ -45,12 +45,10 @@
 
 ```html
 <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!--
-  以上 3 个 meta 标签 *必须* 放在 head 之前，以确保正确的文档呈现；
+  以上 2 个 meta 标签 *必须* 放在 head 之前，以确保正确的文档呈现；
   其他任何 head 元素 *必须* 在这些标签之后。
-  † 如果你的项目需要支持 Internet Explorer 11 之前的版本，请使用 content="ie-edge" 标签。
 -->
 <title>页面标题</title>
 ```
@@ -96,12 +94,11 @@
 
 ```html
 <!--
-  以上 3 个 meta 标签 *必须* 放在 head 之前，以确保正确的文档呈现；
+  以上 2 个 meta 标签 *必须* 放在 head 之前，以确保正确的文档呈现；
   其他任何 head 元素 *必须* 在这些标签之后。
   † 如果你的项目需要支持 Internet Explorer 11 之前的版本，请使用 content="ie-edge" 标签。
 -->
 <meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge"><!-- † -->
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- 允许控制资源从何处加载。在 <head> 中尽可能地靠前放置，因为该标签仅适用于在其之后声明的资源。-->
@@ -318,11 +315,12 @@
 
 ```html
 <html lang="" itemscope itemtype="http://schema.org/Article">
-<link rel="author" href="">
-<link rel="publisher" href="">
-<meta itemprop="name" content="内容标题">
-<meta itemprop="description" content="内容描述少于 200 个字符">
-<meta itemprop="image" content="http://example.com/image.jpg">
+  <head>
+    <link rel="author" href="">
+    <link rel="publisher" href="">
+    <meta itemprop="name" content="内容标题">
+    <meta itemprop="description" content="内容描述少于 200 个字符">
+    <meta itemprop="image" content="http://example.com/image.jpg">
 ```
 
 **注意:** 这个标记需要将属性添加到你的顶级 html 标签中
@@ -430,25 +428,27 @@
 <!-- 通过 Skype Toolbar 浏览器扩展功能禁用自动检测和格式化可能的电话号码 -->
 <meta name="skype_toolbar" content="skype_toolbar_parser_compatible">
 
-<!-- IE10: 禁用链接点击高亮 (https://blogs.windows.com/buildingapps/2012/11/15/adapting-your-webkit-optimized-site-for-internet-explorer-10/) -->
-<meta name="msapplication-tap-highlight" content="no">
-
-<!-- 固定网站 (https://msdn.microsoft.com/en-us/library/dn255024(v=vs.85).aspx) -->
-<meta name="application-name" content="Sample Title">
-<meta name="msapplication-tooltip" content="A description of what this site does.">
-<meta name="msapplication-starturl" content="https://example.com/index.html?pinned=true">
-<meta name="msapplication-navbutton-color" content="#FF3300">
-<meta name="msapplication-window" content="width=800;height=600">
-<meta name="msapplication-task" content="name=Task 1;action-uri=https://host/Page1.html;icon-uri=https://host/icon1.ico">
-<meta name="msapplication-task" content="name=Task 2;action-uri=https://microsoft.com/Page2.html;icon-uri=https://host/icon2.ico">
-<meta name="msapplication-badge" value="frequency=NUMBER_IN_MINUTES;polling-uri=https://example.com/path/to/file.xml">
-<meta name="msapplication-TileColor" content="#FF3300">
-<meta name="msapplication-TileImage" content="path/to/tileimage.jpg">
-
-<meta name="msapplication-config" content="https://example.com/browserconfig.xml">
-<meta name="msapplication-notification" content="frequency=60;polling-uri=https://example.com/livetile;polling-uri2=https://example.com/livetile2">
-<meta name="msapplication-task-separator" content="1">
+<!-- Windows 磁贴 -->
+<meta name="msapplication-config" content="/browserconfig.xml">
 ```
+
+最低要求的的 `browserconfig.xml` 配置：
+
+```xml
+<?xml version="1.0" encoding="utf-8"?>
+<browserconfig>
+  <msapplication>
+    <tile>
+      <square70x70logo src="small.png"/>
+      <square150x150logo src="medium.png"/>
+      <wide310x150logo src="wide.png"/>
+      <square310x310logo src="large.png"/>
+    </tile>
+  </msapplication>
+</browserconfig>
+```
+
+- 📖 [浏览器配置模式参考](https://msdn.microsoft.com/en-us/library/dn320426.aspx)
 
 **[⬆ 返回顶部](#目录)**
 
@@ -548,11 +548,13 @@
 
 - 🇺🇸 [英语/English](https://github.com/joshbuchea/HEAD)
 - 🇨🇳 [简体中文/Chinese (Simplified)](https://github.com/Amery2010/HEAD)
+- 🇩🇪 [德语/German](https://github.com/Shidigital/HEAD)
 - 🇧🇷 [巴西葡萄牙语/Brazilian Portuguese](https://github.com/Webschool-io/HEAD)
 - 🇮🇹 [意大利语/Italian](https://github.com/Fakkio/HEAD)
 - 🇯🇵 [日语/Japanese](https://coliss.com/articles/build-websites/operation/work/collection-of-html-head-elements.html)
 - 🇰🇷 [韩语/Korean](https://github.com/Lutece/HEAD)
 - 🇷🇺 [俄罗斯语/Russian/Русский](https://github.com/Konfuze/HEAD)
+- 🇪🇸 [西班牙语/Spanish](https://github.com/alvaroadlf/HEAD)
 - 🇹🇷 [土耳其语/Turkish/Türkçe](https://github.com/mkg0/HEAD)
 
 **[⬆ 返回顶部](#目录)**
