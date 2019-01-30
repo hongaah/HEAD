@@ -45,7 +45,7 @@
 
 ```html
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--
   以上 2 个 meta 标签 *必须* 放在 <head> 标签内 最前面，以确保正确的文档呈现；
   其他任何 head 元素 *必须* 在这些标签之后。
@@ -99,7 +99,7 @@
   † 如果你的项目需要支持 Internet Explorer 11 之前的版本，请使用 content="ie-edge" 标签。
 -->
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
 <!-- 允许控制资源从何处加载。在 <head> 中尽可能地靠前放置，因为该标签仅适用于在其之后声明的资源。-->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
@@ -177,7 +177,7 @@
 <link rel="stylesheet" href="https://example.com/styles.css">
 
 <!-- 有助于防止出现内容重复的问题 -->
-<link rel="canonical" href="http://example.com/article/?page=2">
+<link rel="canonical" href="https://example.com/article/?page=2">
 
 <!-- 链接到当前文档的一个 AMP HTML 版本 -->
 <link rel="amphtml" href="https://example.com/path/to/amp-version.html">
@@ -203,16 +203,16 @@
 <link rel="archives" href="https://example.com/archives/">
 
 <!-- 链接到层次结构中的顶级资源 -->
-<link rel="index" href="http://example.com/article/">
+<link rel="index" href="https://example.com/article/">
 
 <!-- 提供了自我引用 - 当文档有多个可能的引用时非常有用 -->
-<link rel="self" type="application/atom+xml" href="http://example.com/atom.xml">
+<link rel="self" type="application/atom+xml" href="https://example.com/atom.xml">
 
 <!-- 分别是一系列页面中的第一个，最后一个，上一个和下一个页面 -->
-<link rel="first" href="http://example.com/article/">
-<link rel="last" href="http://example.com/article/?page=42">
-<link rel="prev" href="http://example.com/article/?page=1">
-<link rel="next" href="http://example.com/article/?page=3">
+<link rel="first" href="https://example.com/article/">
+<link rel="last" href="https://example.com/article/?page=42">
+<link rel="prev" href="https://example.com/article/?page=1">
+<link rel="next" href="https://example.com/article/?page=3">
 
 <!-- 当使用第三方服务来维护博客时使用 -->
 <link rel="EditURI" href="https://example.com/xmlrpc.php?rsd" type="application/rsd+xml" title="RSD">
@@ -314,16 +314,16 @@
 ### Google+ / Schema.org
 
 ```html
-<html lang="" itemscope itemtype="http://schema.org/Article">
+<html lang="" itemscope itemtype="https://schema.org/Article">
   <head>
     <link rel="author" href="">
     <link rel="publisher" href="">
     <meta itemprop="name" content="内容标题">
     <meta itemprop="description" content="内容描述少于 200 个字符">
-    <meta itemprop="image" content="http://example.com/image.jpg">
+    <meta itemprop="image" content="https://example.com/image.jpg">
 ```
 
-**注意:** 这个标记需要将属性添加到你的顶级 html 标签中
+**注意:** 这些 meta 标签需要在 `<html>` 中添加 `itemscope` 和 `itemtype` 属性。
 
 - 🛠 请在 [结构化数据测试工具](https://developers.google.com/structured-data/testing-tool/) 上测试你的页面
 
