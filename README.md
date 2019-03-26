@@ -15,7 +15,8 @@
   - [移动设备](#移动设备)
   - [网页相关](#网页相关)
   - [其他](#其他)
-- [链接](#链接)
+- [Link 链接](#Link-链接)
+- [JS 链接](JS-链接)
 - [网站图标](#网站图标)
 - [社交](#社交)
   - [Facebook Open Graph](#facebook-open-graph)
@@ -101,6 +102,8 @@
 >标签提供关于HTML文档的元数据。元数据不会显示在页面上，但是对于机器是可读的。它可用于浏览器（如何显示内容或重新加载页面），搜索引擎（关键词），或其他 web 服务。 —— W3School
 
 meta标签共有两个属性，分别是http-equiv属性和name属性，content中的内容是对属性填入类型的具体描述。
+name属性主要用于描述网页，比如网页的关键词，叙述等。
+http-equiv属性常用来做http协议上的一些限制，其作用是把 content 属性关联到 HTTP 头部。
 
 ### 基本常用
 
@@ -119,6 +122,7 @@ meta标签共有两个属性，分别是http-equiv属性和name属性，content�
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <!-- 启用360浏览器的极速模式(webkit) -->
 <meta name="renderer" content="webkit">
+
 <!-- 搜索引擎抓取 -->
 <meta name="robots" content="index,follow">
 <!-- 不让百度转码 -->
@@ -392,7 +396,7 @@ meta标签共有两个属性，分别是http-equiv属性和name属性，content�
 
 **[⬆ 返回顶部](#目录)**
 
-## 链接
+## Link 链接
 
 ```html
 <!-- 指向一个外部 CSS 样式表 -->
@@ -467,6 +471,29 @@ meta标签共有两个属性，分别是http-equiv属性和name属性，content�
 - 📖 [链接关系](https://www.iana.org/assignments/link-relations/link-relations.xhtml)
 
 **[⬆ 返回顶部](#目录)**
+
+## JS 链接
+
+1 js文件放在head里面和放在body里面的区别
+首先放在head里面，script 标签如果沒加上 async属性的話，會 block 住浏览器，就是要下载完这个js文件才会进行下一步操作，如果文件很小还好，如果是比较大的，就会有阻塞的效果，影响用户体验。
+
+浏览器解析网页时是一行行解析的，就是说解析到head里面的js文件时就会停下来，而我们的Dom结构是在head下面的body标签里面，就是说我们得等js文件下载完成才能看到body的内容，那我们选择放在body底部的话，浏览器就会优先加载dom，解析到body底部的js时才去下载，但是在下载之前我们已经能看到body的内容，浏览体验就会好一点，
+
+那有人会问，放在body头部和底部有什么区别呢？其实放在body头部的话就和放在head里面一样的啦
+
+2 js文件放在head里面避免弊端
+有两个属性可以解决js文件同步下载的问题： defer和async
+
+defer：
+如果一个script加了defer属性，即使放在head里面，它也会在html页面解析完毕之后再去执行，也就是类似于把这个script放在了页面底部。
+<script defer src="test.js"></script>
+
+async：
+对于async，这个是html5中新增的属性，它的作用是能够异步的加载和执行脚本，不因为加载脚本而阻塞页面的加载。一旦加载到就会立刻执行。有 async，加载和渲染后续文档元素的过程将和 script.js 的加载与执行并行进行（异步）。但是很有可能不是按照原本的顺序来执行的。如果js前后有依赖性，用async，就很有可能出错。
+<script async src="test.js"></script>
+
+3 最好把js文件放在哪
+现在浏览器做了一些优化，即使把js放在head里面也不会有大问题，所以我们可以将必要的js放在head里面，比较大的js放在body的底部，但是最简单最好方法就是放在body底部，W3C是将js放在head里面；
 
 ## 网站图标
 
