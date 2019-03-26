@@ -17,7 +17,7 @@
   - [网页相关](#网页相关)
   - [其他](#其他)
 - [Link 链接](#Link-链接)
-- [JS 链接](JS-链接)
+- [JS 链接](#JS-链接)
 - [网站图标](#网站图标)
 - [社交](#社交)
   - [Facebook Open Graph](#facebook-open-graph)
@@ -425,12 +425,17 @@ http-equiv属性常用来做http协议上的一些限制，其作用是把 conte
 <meta name="robots" content="none"><!-- 所有搜索引擎 -->
 <meta name="googlebot" content="index,follow"><!-- 仅对 Google 有效 -->
 
-<!-- 页面重定向和刷新：content内的数字代表时间（秒），既多少时间后刷新。如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）。 -->
+<!--
+    页面重定向和刷新
+    content内的数字代表时间（秒），既多少时间后刷新。
+    如果加url,则会重定向到指定网页（搜索引擎能够自动检测，也很容易被引擎视作误导而受到惩罚）。
+-->
 <meta http-equiv="refresh" content="0;url=">
 
 <!--
     搜索引擎爬虫重访时间
-    说明：如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。如果重访时间过短，爬虫将按它们定义的默认时间来访问
+    说明：如果页面不是经常更新，为了减轻搜索引擎爬虫对服务器带来的压力，可以设置一个爬虫的重访时间。
+    如果重访时间过短，爬虫将按它们定义的默认时间来访问
 -->
 <meta name="revisit-after" content="7 days">
 ```
@@ -448,8 +453,8 @@ http-equiv属性常用来做http协议上的一些限制，其作用是把 conte
     maximum-scale：允许用户缩放到的最大比例
     user-scalable：用户是否可以手动缩 (no,yes)
     minimal-ui：可以在页面加载时最小化上下状态栏。（已弃用）
-    注意，很多人使用initial-scale=1到非响应式网站上，这会让网站以100%宽度渲染，
-    用户需要手动移动页面或者缩放。如果和initial-scale=1同时使用user-scalable=no或maximum-scale=1，则用户将不能放大/缩小网页来看到全部的内容。
+    注意，很多人使用initial-scale=1到非响应式网站上，这会让网站以100%宽度渲染，用户需要手动移动页面或者缩放。
+    如果和initial-scale=1同时使用user-scalable=no或maximum-scale=1，则用户将不能放大/缩小网页来看到全部的内容。
  -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -526,7 +531,9 @@ http-equiv属性常用来做http协议上的一些限制，其作用是把 conte
 
 <!--
     cache-control、Pragma、Expires
-    将这三个属性并列在一起，是因为其跟HTTP头有着同样的属性。从字面上看，加上相应的属性能够让浏览器缓存相应的html内容，但是，现实是残酷的，这些标签往往不会生效，甚至在HTML5规范中，http-equiv中的属性并不包括这三个，在meta标签设置缓存无效，如果我们需要进行缓存控制的话，还是 寄希望与HTTP headers上。
+    将这三个属性并列在一起，是因为其跟HTTP头有着同样的属性。从字面上看，加上相应的属性能够让浏览器缓存相应的html内容，
+    但是，现实是残酷的，这些标签往往不会生效，甚至在HTML5规范中，http-equiv中的属性并不包括这三个，在meta标签设置缓存无效，
+    如果我们需要进行缓存控制的话，还是寄希望与HTTP headers上。
 -->
 <meta http-equiv="cache-control" content="max-age=180">
 <meta http-equiv="cache-control" content="no-cache">
@@ -564,8 +571,10 @@ http-equiv属性常用来做http协议上的一些限制，其作用是把 conte
 
 ```html
 <!--
-    处于安全方面的考虑，浏览器的同源策略在一定程度上保护了用户安全，但是像script、link、img等标签是不受同源策略的影响，而这些因素会给我们的用户带来安全风险，这个时候，该属性就出马了。
-    在浏览器中，通过设置该属性来声明哪些动态资源允许被加载以此减少XSS攻击。该属性的内容包括了对script、style、font、media等静态资源的控制
+    处于安全方面的考虑，浏览器的同源策略在一定程度上保护了用户安全，
+    但是像script、link、img等标签是不受同源策略的影响，而这些因素会给我们的用户带来安全风险，这个时候，该属性就出马了。
+    在浏览器中，通过设置该属性来声明哪些动态资源允许被加载以此减少XSS攻击。
+    该属性的内容包括了对script、style、font、media等静态资源的控制
 -->
 <!-- 允许控制资源从何处加载。在 <head> 中尽可能地靠前放置，因为该标签仅适用于在其之后声明的资源。-->
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'">
